@@ -138,3 +138,40 @@ plt.title("Probability of 70inches height using multinomial distribution")
 plt.show()
 
 ![image](https://user-images.githubusercontent.com/106718885/172027661-84bcf1eb-93b3-4e37-83c8-d8e439635e29.png)
+
+**
+Using binomial distribution**
+
+
+import numpy 
+
+import matplotlib.pyplot as plt 
+
+from scipy.stats import binom
+
+prob=[] # pobability list to store outcome 2 probility for range n=10 to 1000 
+
+ntrails_no=[] # List to store n trails values 
+
+ntrails=1000 
+
+count_of_70=0 
+
+
+for n in range(0,ntrails+1): 
+
+ probheight = binom.pmf(70,100,0.01)
+
+ prob.append(probheight)
+ 
+ ntrails_no.append(n) 
+ 
+plt.plot(ntrails_no,prob,color='green') 
+
+plt.xlabel("Trials") 
+
+plt.ylabel("Probability") 
+
+plt.title("Probability of height 70 inches in 1000 experiments using binomial distribution") 
+
+plt.show()
