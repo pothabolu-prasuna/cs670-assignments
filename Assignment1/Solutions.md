@@ -94,5 +94,4 @@ prob=binom.pmf(70,100,0.01)
 
 print("categorical probability that a man is of height 70 inches:",prob)
 
-**
-o/p is:categorical probability that a man is of height 70 inches: 2.172673073333347e-115**
+o/p is:categorical probability that a man is of height 70 inches: 2.172673073333347e-115
