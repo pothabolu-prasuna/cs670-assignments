@@ -57,3 +57,20 @@ the probability that a female is between the heights of 65 inches and 70 inches 
 p(60) using z score=(60-64.5)/2.5=-1.8 using ztable value is=0.0359
 
 P(65<t<70|t>=60)=p(65∩70)/1-P(60)=40.68/(1-0.0359)=42.19
+
+
+**Problem 1c:** (20 Points) Lets say you conduct an experiment with a 100 trials where you measure a random man’s height. Lets say the measurement that you take is always rounded down to an integer
+
+( ie. both a person with a height of 75.2 inches and a person of height 75.8 inches would be recorded as 75 inches thus making the distribution a discrete distribution instead of continuous).
+
+What do you expect the count of men with a height of 70 inches to be? What type of distribution do you expect it to be?
+
+( You do not need to answer these questions, it is simply something to think about to aid you with the next part )
+
+Calculate the probability distribution function of the “counts” of people out of 100 with a height of 70 inches.
+
+( Hint: You will have to find the categorical probability that a man is of height 70 )
+
+Simulate the experiment 1000 times to show the relationship on a plot. What is the relationship between number of times the experiment is run and how close it is to the true distribution
+
+( Hint: numpy has many functions that can allow you to simulate distribution functions
