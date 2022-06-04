@@ -56,7 +56,7 @@ the probability that a female is between the heights of 65 inches and 70 inches 
 
 p(60) using z score=(60-64.5)/2.5=-1.8 using ztable value is=0.0359
 
-P(65<t<70|t>=60)=p(65∩70)/1-P(60)=40.68/(1-0.0359)=42.19
+**P(65<t<70|t>=60)=p(65∩70)/1-P(60)=40.68/(1-0.0359)=42.19**
 
 
 **Problem 1c:** (20 Points) Lets say you conduct an experiment with a 100 trials where you measure a random man’s height. Lets say the measurement that you take is always rounded down to an integer
