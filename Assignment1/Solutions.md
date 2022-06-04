@@ -95,3 +95,44 @@ prob=binom.pmf(70,100,0.01)
 print("categorical probability that a man is of height 70 inches:",prob)
 
 o/p is:categorical probability that a man is of height 70 inches: 2.172673073333347e-115
+
+
+**Plot**
+
+import numpy 
+import matplotlib.pyplot as plt 
+
+prob=[] # pobability list to store outcome 2 probility for range n=10 to 1000 
+
+ntrails_no=[] # List to store n trails values 
+
+ntrails=1000 
+
+count70=0 
+
+--# it is to get 
+
+for n in range(1,ntrails+1): 
+
+ x = numpy.random.multinomial(100, [1/100.]*100, size=1) 
+ 
+ count70=x[0][69] 
+ 
+ probability=count70/(100*n) 
+ 
+ count70=0 
+ 
+ prob.append(probability) 
+ 
+ ntrails_no.append(n) 
+
+
+plt.plot(ntrails_no,prob,color='green') 
+
+plt.xlabel("Trials") 
+
+plt.ylabel("Probability") 
+
+plt.title("Probability of 70inches height using multinomial distribution") 
+
+plt.show()
