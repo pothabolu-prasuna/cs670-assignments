@@ -136,3 +136,5 @@ plt.ylabel("Probability")
 plt.title("Probability of 70inches height using multinomial distribution") 
 
 plt.show()
+
+![image](https://user-images.githubusercontent.com/106718885/172027661-84bcf1eb-93b3-4e37-83c8-d8e439635e29.png)
