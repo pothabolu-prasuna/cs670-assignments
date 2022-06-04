@@ -29,3 +29,31 @@ plt.legend()
 **Output:**
 
 ![image](https://user-images.githubusercontent.com/106718885/172023125-fdc52773-dd05-4716-b7ac-74ba05843ea0.png)
+
+**Problem 1b:** (10 Points) What is the probability that a female is between the heights of 65 inches and 70 inches? What is the probability that a female is between the heights of 65 inches and 70 inches given that they are at least 60 inches tall ( You can use 100 as the upper limit of the distribution )?
+
+(Hint: This is a probability assignment, not a calculus assignment. You do not need to calculate any integrals, just show the steps that you would take and the final result)
+
+**Answer 1b:**
+
+Given Mean: 64.5 inches and a standard deviation : 2.5 inches.
+
+probability that a female is between the heights of 65 inches and 70 inches:
+
+zscore(65)=(x-mean)/stardarddeviation=(65-64.5)/2.5=0.5/2.5=0.2
+
+zscore(70)=(70-64.5)/2.5=2.2
+
+using ztable =zscore(0.2)=0.5793
+
+zscore(2.2) =0.9861
+
+Then we will subtract the smaller value from the larger value:0.9861-0.5793=0.4068
+
+probability that a female is between the heights of 65 inches and 70 inches:40.68%
+
+the probability that a female is between the heights of 65 inches and 70 inches given that they are at least 60 inches tall:
+
+p(60) using z score=(60-64.5)/2.5=-1.8 using ztable value is=0.0359
+
+P(65<t<70|t>=60)=p(65∩70)/1-P(60)=40.68/(1-0.0359)=42.19
