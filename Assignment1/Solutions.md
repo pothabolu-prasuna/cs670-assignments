@@ -76,7 +76,7 @@ Simulate the experiment 1000 times to show the relationship on a plot. What is t
 ( Hint: numpy has many functions that can allow you to simulate distribution functions)
 
 **Problem 1c ANSWER:**
-since we are not considering continous values, and consideing discrete values , we can use binomial distributon
+**since we are not considering continous values, and consideing discrete values , we can use binomial distributon or multinomial distribution. the probability is constants with number of experiments increases**
 
 from scipy.stats import binom
 
@@ -175,3 +175,6 @@ plt.ylabel("Probability")
 plt.title("Probability of height 70 inches in 1000 experiments using binomial distribution") 
 
 plt.show()
+
+![image](https://user-images.githubusercontent.com/106718885/172027719-9543ca3a-a8bf-41df-a4af-fd2f9bc9ec7d.png)
+
