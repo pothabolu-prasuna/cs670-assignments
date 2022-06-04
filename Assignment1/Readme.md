@@ -25,3 +25,7 @@ plt.plot(x, norm.pdf(x, 64.5, 2.5), label='Female--> μ:64.5, σ: 2.5')
 #add legend to plot
 
 plt.legend()
+
+**Output:**
+
+![image](https://user-images.githubusercontent.com/106718885/172023125-fdc52773-dd05-4716-b7ac-74ba05843ea0.png)
