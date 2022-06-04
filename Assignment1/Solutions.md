@@ -73,4 +73,16 @@ Calculate the probability distribution function of the “counts” of people ou
 
 Simulate the experiment 1000 times to show the relationship on a plot. What is the relationship between number of times the experiment is run and how close it is to the true distribution
 
-( Hint: numpy has many functions that can allow you to simulate distribution functions
+( Hint: numpy has many functions that can allow you to simulate distribution functions)
+
+**Problem 1c ANSWER:**
+from scipy.stats import binom
+import matplotlib.pyplot as plt
+# of n and p
+n = 100
+p = 0.01 #if consider 1 to 100 inches for height
+# since we are not considering continous values, and consideing discrete values , we can use binomial distributon
+prob=binom.pmf(70,100,0.01)
+print("categorical probability that a man is of height 70 inches:",prob)
+**
+o/p is:categorical probability that a man is of height 70 inches: 2.172673073333347e-115**
