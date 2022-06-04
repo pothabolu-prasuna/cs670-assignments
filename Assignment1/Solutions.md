@@ -178,3 +178,6 @@ plt.show()
 
 ![image](https://user-images.githubusercontent.com/106718885/172027719-9543ca3a-a8bf-41df-a4af-fd2f9bc9ec7d.png)
 
+**Problem 2a: (15 Points)**
+Given the circuit below, the probability that any switch  is closed (current passes through ) is ? What is the probability that there is a signal at the output? Give your answer in terms of 
+
