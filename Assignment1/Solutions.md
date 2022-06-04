@@ -76,18 +76,19 @@ Simulate the experiment 1000 times to show the relationship on a plot. What is t
 ( Hint: numpy has many functions that can allow you to simulate distribution functions)
 
 **Problem 1c ANSWER:**
+since we are not considering continous values, and consideing discrete values , we can use binomial distributon
 
 from scipy.stats import binom
 
 import matplotlib.pyplot as plt
 
-# of n and p
+
 
 n = 100
 
 p = 0.01 #if consider 1 to 100 inches for height
 
-# since we are not considering continous values, and consideing discrete values , we can use binomial distributon
+
 
 prob=binom.pmf(70,100,0.01)
 
