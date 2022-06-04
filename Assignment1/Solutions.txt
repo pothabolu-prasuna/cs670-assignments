@@ -21,4 +21,4 @@ plt.plot(x, norm.pdf(x, 64.5, 2.5), label='Female--> μ:64.5, σ: 2.5')
 plt.legend()
 
 output:
-question 1.a. output
+https://github.com/pothabolu-prasuna/cs670-assignments/issues/1#issue-1260873830
