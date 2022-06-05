@@ -305,3 +305,28 @@ df.loc[df['Gender']=='Male'].cov()
 **Output:**
 
 ![image](https://user-images.githubusercontent.com/106718885/172030243-d9b60f4b-3935-46ea-b8c6-9061ea8b9c12.png)
+
+**Problem 3b:** (10 points) Find the correlation between height and weight for Males and Females
+
+#correlation=cov(x,y)/(standarddeviation(x)* standarddeviation(y))
+
+#ststandarddeviation(x)=sqrt(sqare(x-mean)/n)
+
+
+stdMHeight=math.sqrt(df[df['Gender']=='Male']["heightMeandiffsquare"].sum()/Maledatarows)
+
+stdMweight=math.sqrt(df[df['Gender']=='Male']["weightMeandiffsquare"].sum()/Maledatarows)
+
+stdFHeight=math.sqrt(df[df['Gender']=='Female']["heightMeandiffsquare"].sum()/Fdatarows)
+
+stdFweight=math.sqrt(df[df['Gender']=='Female']["weightMeandiffsquare"].sum()/Fdatarows)
+
+Mcorr=MdataCov/(stdMHeight*stdMweight)
+
+Fcorr=FdataCov/(stdFHeight*stdFweight)
+
+print("Correlation of Male height and weight=",Mcorr)
+
+print("Correlation of Female height and weight=",Fcorr)
+
+
