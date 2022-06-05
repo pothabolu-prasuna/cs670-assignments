@@ -388,5 +388,9 @@ ax.set_zlabel('PDF')
 
 ax.set_title('Wireframe plot of Gaussian');
 
+**output:**
+
+![image](https://user-images.githubusercontent.com/106718885/172030601-aa48e4a4-5128-4a58-95a7-de7b1679bb89.png)
+
 
 
