@@ -226,3 +226,79 @@ Given that the signal is observed at the end, the probability that S3 is open he
 =(1 - p) p2 (2 - p)/[p2 (2 - p)*[2 - p2(2-p) ]]
 
 = (1-p) / [ 2 - p2(2-p) ]
+
+
+**Problem 3a (20 points)** It follows that those with a larger height will be generally heavier than those with a smaller height. This is just a broad generalization and does not always apply. Here is a link to a data set that contains anonymous entries on peoples’ gender, height and weight. Download this dataset ( It is pretty small don’t worry ). You might need to make a Kaggle account. Kaggle is an online community of data scientists and has a large collection of open source datasets for many different purposes.
+
+Familiarize yourself with the package pandas, as you can use it to easily unpack the csv into manipulatable datatypes. If you are using colab, which you most likely are, ensure that you have logged in with the university Google account.
+
+Using the data find two values for covariance between height and weight. There should be one value for male and female.
+
+(Hint: Make sure to store all intermediate values like averages and counts as they might be useful for the extra credit)
+
+
+
+
+**Answer 3a:**
+
+import pandas as pd
+
+import math
+
+df = pd.read_csv('weight-height.csv')
+
+# covariance=sum((x-xmean)*(y-ymean))/n
+
+Maledatarows=len(df[df['Gender']=='Male'])
+
+Fdatarows=len(df[df['Gender']=='Female'])
+
+Mheightsmean=df[df['Gender']=='Male']["Height"].mean()
+
+Fheightsmean=df[df['Gender']=='Female']["Height"].mean()
+
+Mweightsmean=df[df['Gender']=='Male']["Weight"].mean()
+
+Fweightsmean=df[df['Gender']=='Female']["Weight"].mean()
+
+
+print("Male heightsmean=",Mheightsmean," Male weightsmean=",Mweightsmean)
+
+print("Female heightsmean=",Fheightsmean," Female weightsmean=",Fweightsmean)
+
+
+df["heightsmeanDiff"]= ""
+
+df["WeightsmeanDiff"]=""
+
+df["Mulheightweightdiff"]=""
+
+df["heightMeandiffsquare"]=""
+
+df["weightMeandiffsquare"]=""
+
+df.loc[df['Gender']=='Male',"heightsmeanDiff"]=df["Height"]-Mheightsmean
+
+df.loc[df['Gender']=='Female',"heightsmeanDiff"]=df["Height"]-Fheightsmean
+
+df.loc[df['Gender']=='Male',"WeightsmeanDiff"]=df["Weight"]-Mweightsmean
+
+df.loc[df['Gender']=='Female',"WeightsmeanDiff"]=df["Weight"]-Fweightsmean
+
+df["Mulheightweightdiff"]=df["heightsmeanDiff"]*df["WeightsmeanDiff"]
+
+df["heightMeandiffsquare"]=df['heightsmeanDiff']**2
+
+df["weightMeandiffsquare"]=df['WeightsmeanDiff']**2
+
+MdataCov=df[df['Gender']=='Male']["Mulheightweightdiff"].mean()
+
+FdataCov=df[df['Gender']=='Female']["Mulheightweightdiff"].mean()
+
+print ("Covarience of Male height and weight",MdataCov)
+
+print ("Covarience of Female height and weight",FdataCov)
+
+df.loc[df['Gender']=='Male'].cov()
+**
+Output:**
