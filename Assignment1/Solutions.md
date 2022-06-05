@@ -213,4 +213,16 @@ that is 4*(p pow5)-2 (p pow 3)-4(p pow 4)-(p pow 6)+4(p Pow 5)
 
 
 **Problem 2b: (15 Points)**
-Given the same circuit above, if a signal is observed at the end, what is the probability that  is open ( no current going through ) . Give your answer in terms of .
+Given the same circuit above, if a signal is observed at the end, what is the probability that  is open ( no current going through ) . Give your answer in terms of p.
+
+
+
+Given that the signal is observed at the end, the probability that S3 is open here is computed using Bayes theorem here as:
+
+= Probability that S3 is open and the below series works / P( system works )
+
+=(1 - p) p2 (2 - p) /(4p2 - 2p3- 4p4 -p6+ 4p5)
+
+=(1 - p) p2 (2 - p)/[p2 (2 - p)*[2 - p2(2-p) ]]
+
+= (1-p) / [ 2 - p2(2-p) ]
