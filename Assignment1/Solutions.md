@@ -103,7 +103,7 @@ x = np.random.binomial(100, 0.21,size=1000)
 plt.hist(x,density="true")
 plt.show()
 
-![image](https://user-images.githubusercontent.com/106718885/172071561-917cde9e-4df8-4253-a7fd-600b9ea494cb.png)
+![image](https://user-images.githubusercontent.com/106718885/172071741-56047990-61ae-4fcf-96a2-09a2a981160a.png)
 
 **Plot**
 
