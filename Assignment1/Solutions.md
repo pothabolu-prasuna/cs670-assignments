@@ -329,4 +329,8 @@ print("Correlation of Male height and weight=",Mcorr)
 
 print("Correlation of Female height and weight=",Fcorr)
 
+**output:**
 
+Correlation of Male height and weight= 0.8629788486163136
+
+Correlation of Female height and weight= 0.8496085914186011
