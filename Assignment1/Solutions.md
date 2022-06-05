@@ -334,3 +334,59 @@ print("Correlation of Female height and weight=",Fcorr)
 Correlation of Male height and weight= 0.8629788486163136
 
 Correlation of Female height and weight= 0.8496085914186011
+
+**Extra credit: (5 points)**
+Using matplotlib’s or seaborn’s 3D graphing functionality, create a wireframe graph of the multivariate probability distribution of heights and weights for either men or women ( You don’t have to do both ). Use the data and calculated values from problem 3 to solve this problem.
+
+( Hint: You can assume both distributions are normal. Use this link to help in understanding )
+
+**Answer:**
+import numpy as np
+
+import matplotlib.pyplot as plt
+
+from scipy.stats import multivariate_normal
+
+import matplotlib.pyplot as plt
+
+mean = [Mheightsmean, Mweightsmean]
+
+mcov = df.loc[df['Gender']=='Male'].cov()
+
+print(mcov)
+plt.style.use('seaborn-dark')
+
+plt.rcParams['figure.figsize']=14,6
+
+fig = plt.figure()
+
+distr = multivariate_normal(cov = mcov, mean = mean)
+
+X, Y = np.meshgrid(df[df['Gender']=='Male']["Height"],df[df['Gender']=='Male']["Weight"])
+
+pdf = np.zeros(X.shape)
+
+for i in range(X.shape[0]):
+
+  for j in range(X.shape[1]):
+  
+    pdf[i,j] = distr.pdf([X[i,j], Y[i,j]])
+
+fig = plt.figure(figsize=(13, 7))
+
+ax = plt.axes(projection='3d')
+
+#print(pdf[0:1000,:])
+
+w = ax.plot_wireframe(X, Y, pdf)
+
+ax.set_xlabel('Height')
+
+ax.set_ylabel('Weight')
+
+ax.set_zlabel('PDF')
+
+ax.set_title('Wireframe plot of Gaussian');
+
+
+
