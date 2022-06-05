@@ -94,9 +94,11 @@ prob=binom.pmf(70,100,0.01)
 
 print("categorical probability that a man is of height 70 inches:",prob)
 
-o/p is:categorical probability that a man is of height 70 inches: 2.172673073333347e-115
+**o/p is:categorical probability that a man is of height 70 inches: 2.172673073333347e-115**
 
-x = numpy.random.binomial(100, 0.01,size=1000) 
+#using the probaility of 70inches height got from above.
+x = np.random.binomial(100, 0.21,size=1000) 
+
 
 plt.hist(x,density="true")
 plt.show()
