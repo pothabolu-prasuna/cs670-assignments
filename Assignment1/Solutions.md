@@ -300,5 +300,8 @@ print ("Covarience of Male height and weight",MdataCov)
 print ("Covarience of Female height and weight",FdataCov)
 
 df.loc[df['Gender']=='Male'].cov()
-**
-Output:**
+
+
+**Output:**
+
+![image](https://user-images.githubusercontent.com/106718885/172030243-d9b60f4b-3935-46ea-b8c6-9061ea8b9c12.png)
