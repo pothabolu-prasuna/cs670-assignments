@@ -101,6 +101,8 @@ x = numpy.random.binomial(100, 0.01,size=1000)
 plt.hist(x,density="true")
 plt.show()
 
+![image](https://user-images.githubusercontent.com/106718885/172071561-917cde9e-4df8-4253-a7fd-600b9ea494cb.png)
+
 **Plot**
 
 import numpy 
