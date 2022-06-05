@@ -211,3 +211,6 @@ Therefore, the probability that the whole system works now is computed here as: 
 
 that is 4*(p pow5)-2 (p pow 3)-4(p pow 4)-(p pow 6)+4(p Pow 5)
 
+
+**Problem 2b: (15 Points)**
+Given the same circuit above, if a signal is observed at the end, what is the probability that  is open ( no current going through ) . Give your answer in terms of .
