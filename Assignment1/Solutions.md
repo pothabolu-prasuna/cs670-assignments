@@ -183,3 +183,31 @@ Given the circuit below, the probability that any switch  is closed (current pas
 
 ![image](https://user-images.githubusercontent.com/106718885/172027860-718b8846-9b71-40c5-bdc8-bf260b348ae0.png)
 
+**Answer 2a:**
+
+a) The probability of a signal at the output here is computed as:
+
+probability of current passes through switch s closed is p. Probability that a parallel of two switches(S1 and S3) work is computed as =p(S1US2)=1-p(S1c∩S2c)=1-((1-p)*(1-p)) = 1 - (1 - p)2
+
+probability of top layer using (S1 ,S2,S3) is computed as:
+
+= p* [ 1 - (1 - p)2 ]
+
+= p* [ 2p - p2]
+
+= p2(2 - p)
+
+probability of bottom layer using (S4, S5, S6) is computed as: P(S4∩S5US6): = p2(2 - p)
+
+Therefore, the probability that the whole system works now is computed here as: =1-[1-p2 (2 - p)]*[1-p2 (2 - p)] = 1 - [ 1 - p2 (2 - p) ]2
+
+= 1-[1+ p4(2 - p)2 -2p2 (2 - p)]
+
+=1-[1+ p4(4 +p2- 4p) -2p2 (2 - p)]
+
+=1-1- p4(4 +p2- 4p)+ 2p2 (2 - p)
+
+=4p2 - 2p3- 4p4 -p6+ 4p5
+
+that is 4*(p pow5)-2 (p pow 3)-4(p pow 4)-(p pow 6)+4(p Pow 5)
+
