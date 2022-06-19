@@ -179,5 +179,5 @@ def exp_lamda_MLE(x):
 
 print("lambda estimate:", exp_lamda_MLE(xdata))
 
-
+**output is: lambda estimate: 0.24911656443887148**
 
