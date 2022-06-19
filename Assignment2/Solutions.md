@@ -157,3 +157,27 @@ plot_EXpll(xdata);
 
 ![image](https://user-images.githubusercontent.com/106718885/174467560-7f7dd1e5-8fb7-4f55-bbaa-2ba8ba2fba98.png)
 
+**Part 2.2 What is the lambda MLE of the generated data? (10 points)**
+
+log likelihood of the exponential distribution: ll(λ:x1,x2..xn)=nlog(λ)- λ*sum(x)
+
+derivative LL with respect to λ=n/λ - sum(x)
+
+**by using this formula MLE of parameter λ=n/sum(x)**
+
+code: find MLE of data generated in previous problem
+
+import numpy as np 
+
+def exp_lamda_MLE(x):
+
+    n = len(x)
+    
+    sumval = np.sum(x)
+    
+    return n/sumval
+
+print("lambda estimate:", exp_lamda_MLE(xdata))
+
+
+
