@@ -19,8 +19,8 @@ A common parameterization for expon is in terms of the rate parameter lambda, su
 This parameterization corresponds to using **scale = 1 / lambda**.
 
 
-Plot 
-
+**Plot data set with lambda 0.25 so scale=4
+**
 #Importing required modules
 
 import matplotlib.pyplot as plt
@@ -51,4 +51,24 @@ plt.show()
 
 
 **B) Now assume on a very hot day the ice cream man gets X customers and each new customer comes every 4 minutes. Generate X samples from the exponential distribution where X = 200 and the rate = 4. Plot the samples on a graph to show how they look graphically. Does it look similar to the graph above? (20 points)**
+
+**code:**
+
+we use random.exponential function with values scale=4 and size=200 to generate 200 samples
+
+import numpy as np
+
+import matplotlib.pyplot as plt
+
+import seaborn as sns  
+
+# Using exponential() method
+
+exponval = np.random.exponential(4, 200)
+
+#print(exponval )
+
+plt.hist(exponval, 10, density = True)
+
+plt.show()
 
