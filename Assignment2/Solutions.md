@@ -47,3 +47,5 @@ plt.show()
 
 Output:
 
+![image](https://user-images.githubusercontent.com/106718885/174466785-f3701891-15d1-47cc-a1d3-b55612ac658d.png)
+
