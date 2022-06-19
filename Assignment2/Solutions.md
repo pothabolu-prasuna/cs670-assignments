@@ -68,8 +68,16 @@ exponval = np.random.exponential(4, 200)
 
 #print(exponval )
 
+plt.title("Exponential distribution of 200 data samples")
+
+plt.xlabel('intervals')
+
+plt.ylabel('Probability Density')
+
 plt.hist(exponval, 10, density = True)
 
 plt.show()
+
+
 
 **output:**
