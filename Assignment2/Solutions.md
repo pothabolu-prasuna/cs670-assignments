@@ -86,9 +86,27 @@ plt.show()
 
 
 **Part 2 (30 points)
-Assume that you are given the customer data generated in Part 1, implement a Gradient Descent algorithm from scratch that will estimate the Exponential distribution according to the Maximum Likelihood criterion.
+Assume that you are given the customer data generated in Part 1, implement a Gradient Descent algorithm from scratch that will estimate the Exponential distribution according to the Maximum Likelihood criterion.**
 
-Answer the following:**
+Answer the following:
 
-Plot the negative log likelihood of the exponential distribution. (10 points)
+**Plot the negative log likelihood of the exponential distribution. (10 points)**
+
+
+Plot the negative log likelihood of the exponential distribution:
+
+
+log likelihood of the exponential distribution: nlog(λ)- λ sum(x) 
+
+Negative log likelihood of the exponential distribution=-[ nlog(λ)- λ sum(x)
+
+Steps:
+
+	1.Take set of values for λ ex: we took here from 0.01 to 1 with step size 0.01
+ 
+	2.Take x data set here we took randomly generated 200 samples
+ 
+	3.Calculate negative log likelihood value using above formula using data set(step2) , each lambda
+ 
+	4. use lambdaset and calculated negative likelihood values to plot graph
 
