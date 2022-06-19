@@ -146,9 +146,14 @@ def plot_EXpll(x):
     
  print(exll_array)
  
- # Plot the results
+ #Plot the results
  
  plt.plot(lambda_set, exll_array , label='expon pdf' , color = 'b')
 
 plot_EXpll(xdata);
+
+
+**Output:**
+
+![image](https://user-images.githubusercontent.com/106718885/174467560-7f7dd1e5-8fb7-4f55-bbaa-2ba8ba2fba98.png)
 
