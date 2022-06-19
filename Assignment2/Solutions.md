@@ -1,6 +1,6 @@
 **Part 1 (30 points):**
 
-A) Let X = amount of time (in minutes) a ice cream man gets a new customer at his cart. The time is known to have an exponential distribution with the average amount of time between a new customer being four minutes.
+**A) Let X = amount of time (in minutes) a ice cream man gets a new customer at his cart. The time is known to have an exponential distribution with the average amount of time between a new customer being four minutes.**
 
 Plot the probablity density function of the exponential distribution of this ice cream man getting a customer every 4 minutes. (10 points)
 
@@ -45,7 +45,10 @@ plt.ylabel('Probability Density')
 
 plt.show()
 
-Output:
+**Output:**
 
 ![image](https://user-images.githubusercontent.com/106718885/174466785-f3701891-15d1-47cc-a1d3-b55612ac658d.png)
+
+
+**B) Now assume on a very hot day the ice cream man gets X customers and each new customer comes every 4 minutes. Generate X samples from the exponential distribution where X = 200 and the rate = 4. Plot the samples on a graph to show how they look graphically. Does it look similar to the graph above? (20 points)**
 
