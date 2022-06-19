@@ -84,3 +84,11 @@ plt.show()
 
 ![image](https://user-images.githubusercontent.com/106718885/174467073-3df17a51-c5c0-4251-accf-822bede0e671.png)
 
+
+**Part 2 (30 points)
+Assume that you are given the customer data generated in Part 1, implement a Gradient Descent algorithm from scratch that will estimate the Exponential distribution according to the Maximum Likelihood criterion.
+
+Answer the following:**
+
+Plot the negative log likelihood of the exponential distribution. (10 points)
+
