@@ -62,7 +62,7 @@ import matplotlib.pyplot as plt
 
 import seaborn as sns  
 
-# Using exponential() method
+#Using exponential() method
 
 exponval = np.random.exponential(4, 200)
 
@@ -72,3 +72,4 @@ plt.hist(exponval, 10, density = True)
 
 plt.show()
 
+**output:**
