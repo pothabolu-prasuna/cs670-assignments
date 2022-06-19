@@ -81,3 +81,6 @@ plt.show()
 
 
 **output:**
+
+![image](https://user-images.githubusercontent.com/106718885/174467073-3df17a51-c5c0-4251-accf-822bede0e671.png)
+
