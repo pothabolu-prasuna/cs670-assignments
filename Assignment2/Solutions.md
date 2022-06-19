@@ -109,4 +109,46 @@ Steps:
 	3.Calculate negative log likelihood value using above formula using data set(step2) , each lambda
  
 	4. use lambdaset and calculated negative likelihood values to plot graph
+	
+	
+Code:
+
+from scipy.stats import expon
+#pdf = expon.pdf(x,loc=0,scale=4)
+
+def plot_EXpll(x): 
+
+ plt.figure(figsize=(8,8)) 
+ 
+ plt.title("Neg Log Likelihood of Exponential Distribution") 
+ 
+ plt.xlabel("lambda Estimate") 
+ 
+ plt.ylabel("Negative log Likelyhood") 
+
+ lambda_set = np.arange(0.01,1, 0.01)
+ 
+ #print(lambda_set)
+
+ exll_array = [] 
+ 
+ n=x.size
+ 
+ #print(n)
+ 
+ for lambdaval in lambda_set: 
+ 
+    loglikelyval= (n*np.log(lambdaval))-(lambdaval*np.sum(x)) # The LL function
+    
+    #print(loglikelyval)
+    
+    exll_array.append(-loglikelyval) # negative LL 
+    
+ print(exll_array)
+ 
+ # Plot the results
+ 
+ plt.plot(lambda_set, exll_array , label='expon pdf' , color = 'b')
+
+plot_EXpll(xdata);
 
