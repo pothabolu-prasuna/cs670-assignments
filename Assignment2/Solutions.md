@@ -328,3 +328,166 @@ Guassian model:pmodel(y|x;W)=(1/σ*sqart(2π))*
 **Write the parameters W  and the variance that minimize the NLL (10 points)**
 
 
+![MLE_variance](https://user-images.githubusercontent.com/106718885/174519404-f94cd73d-87df-4806-9e35-ec22784a7ed8.jpeg)
+
+![MLE_W](https://user-images.githubusercontent.com/106718885/174519413-a188348a-9d83-445f-a1c4-ec4e91047f5c.jpeg)
+
+
+Write a Python script that uses SGD to converge to W and variance for the following dataset (20 points)
+
+In SGD, at each iteration, we pick up a single data point randomly from the large dataset and update the weights based on the decision of that data point only. Following are the steps that we use in SGD:
+
+Randomly initialize the coefficients/weights for the first iteration. These could be some small random values.
+
+Initialize the number of epochs, learning rate to the algorithm. These are the hyperparameters so they can be tunned using cross-validation.
+
+In this step, we will make the predictions using the calculated coefficients till this point.
+
+Now we will calculate the error at this point.
+
+Update the weights according to the formula wt+1=wt-learning rate*(vhat-y)
+
+Go to step 3 if the number of epochs is over or the algorithm has converged.
+
+Given data set x and prediction y are: x = np.array([8, 16, 22, 33, 50, 51]) y = np.array([5, 20, 14, 32, 42, 58])
+
+step1: calculate mean and variance of given data
+
+step2: generate random weights as initial weights.
+
+Step3: predict values for x data set using weight
+
+Step4 : calculate error and update w using error and learning rate
+
+W=w-(learningrate)xierror
+
+Bias=w0=wo-(learningrate)*error
+
+Step 5: calculate new variance using variance= MSE=1/n(error*error)
+
+variance prev_var- variance *learning_rate
+
+repeat 3, 4,5 steps until error is zero
+
+
+Code:
+
+import numpy as np 
+
+from scipy.stats import norm 
+
+import random
+
+rgen = np.random.RandomState(1)
+
+x = np.array([8, 16, 22, 33, 50, 51])
+
+y = np.array([5, 20, 14, 32, 42, 58])
+
+w_ = rgen.normal(loc=0.0, scale=1, size=2)
+
+print("intial Weights",w_)
+
+def partial_derivVar(data,est_mean): 
+
+ derVar=0.0 
+ 
+ for x in data: 
+ 
+  derVar+=((x-est_mean)**2) 
+  
+  var=derVar/data.size
+  
+ return var 
+
+def predict(w_,xi):
+  return xi*w_[1] + w_[0]
+
+
+def SGD(x,y,learning_rate, epochs):
+
+  y_predicted = []
+
+  cond_mean=np.sum(x)/x.size
+  
+  est_var=partial_derivVar(x,cond_mean)
+  
+  #print(cond_mean)
+  
+  #print(est_var)
+  
+  sum_of_error=0
+  
+  var_MSE=[]
+  
+  for k in range(epochs): 
+  
+    errors_ = []
+    
+    #print("==============epoch",k)
+    
+    All_weights =[]
+    
+    y_predicted =[]
+    
+    sum_MSE=0
+    
+    toterror=0
+    
+    for xi, target in zip(x, y):
+    
+      error = predict(w_,xi)-target 
+      
+      y_predicted.append(predict(w_,xi))
+      
+      w_[1:] -= learning_rate*error* xi  
+      
+      w_[0] -= learning_rate*error   
+      
+      All_weights.append(w_)
+      
+      #calculating sum of squared error
+      
+      #errors_.append(errors)
+      
+      
+      toterror=toterror+error
+      
+      sum_MSE =sum_MSE + (error*error)
+    
+    curr_var=sum_MSE/x.size
+   
+    est_var=est_var-learning_rate*curr_var
+    
+    var_MSE.append(est_var)  
+    
+    if(abs(toterror)<=0.01):
+    
+        print("stopped at epoch=",k)
+	
+        break
+   
+    
+  print("weights after all epochs",w_)
+  
+  print("all Mean squared errors or variance",var_MSE)
+  
+  print("Final MSE",curr_var)
+  
+  print("Final total error ",toterror)
+  
+SGD(x,y,0.001, 50)
+
+
+Output:
+
+intial Weights [ 1.62434536 -0.61175641]
+
+weights after all epochs [0.22824426 1.87456652]
+
+all Mean squared errors or variance [265.2564889475386, 265.00309050897397, 264.7922236093812, 264.57825959299515, 264.36440508321874, 264.1504093309423, 263.9362913132669, 263.72204912924525, 263.5076824957213, 263.2931910049434, 263.078574259512, 262.8638318619269, 262.64896341539617, 262.4339685237726, 262.2188467915578, 262.003597823901, 261.7882212265983, 261.5727166060922, 261.35708356947026, 261.141321724465, 260.9254306794526, 260.7094100434523, 260.49325942612586, 260.2769784377765, 260.0605666893484, 259.84402379242556, 259.6273493592315, 259.41054300262823, 259.19360433611547, 258.97653297383005, 258.759328530545, 258.541990621669, 258.32451886324543, 258.10691287195164, 257.8891722650983, 257.6712966606286, 257.4532856771175, 257.2351389337709, 257.01685605042496, 256.7984366475455, 256.57988034622696, 256.3611867681919, 256.14235553579005, 255.9233862719978, 255.7042786004172, 255.48503214527545, 255.26564653142398, 255.04612138433782, 254.8264563301148, 254.60665099547484]
+
+Final MSE 219.8053346399655
+
+Final total error  29.857348973834156
+
