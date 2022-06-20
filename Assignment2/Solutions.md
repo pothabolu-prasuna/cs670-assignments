@@ -322,4 +322,4 @@ that is generated from a distribution pdata(x,y)
 Guassian model:pmodel(y|x;W)=(1/σ*sqart(2π))*
 1.Write the expression of the Negative Log Likelihood function . (10 points)
 
-
+![nLL](https://user-images.githubusercontent.com/106718885/174519259-3ff37051-1a76-481b-a2a1-20435755fd83.jpeg)
