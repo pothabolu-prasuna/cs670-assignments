@@ -181,3 +181,128 @@ print("lambda estimate:", exp_lamda_MLE(xdata))
 
 **output is: lambda estimate: 0.24911656443887148**
 
+**part 2.3Plot the estimated lambda vs iterations to showcase convergence towards the true lambda (10 points)
+**
+
+radient descent algorithm to find parameter set: 
+
+Step 1: Take derivative (Gradient) of loss function for each parameter in it 
+
+Step 2: pick random values for the parameters 
+
+Step 3: Plug the parameter values into derivatives 
+
+Step 4: calculate the step sizes : step size=gradient of loss function*learning rate 
+
+Step 5: calculate the new parameters = old parameter- step size Repeat this 
+steps 3 to step 5 till we step sizes are very small or we reach maximum number of steps 
+
+We apply above steps to estimate optimal values for lambda. 
+
+
+Step1: consider random values lambda=100, iterations = 1000 and learning rate =0.01 
+
+Step2: take derivatives of MLE of lambda (λ), using above formulas. der_lambda=(n/lamval)-np.sum(data)
+
+We denote these value as d_lambda.
+
+Step 3: find new lambda using step size est_lambda = est_lambda - (-learning_rate*d_lambda)
+
+step 4: repeat above steps for given number of iterations 
+
+step 5: find optimal values for lambda
+steep6: calculate exponential likelihood using new lambda 
+
+formula is (n*np.log(lambdaval))-(lambdaval*np.sum(data))
+
+step 7: we stop epochs when likelihood of exponential distribution value has no much difference with previous epoch values. We used threshold 0.001 for difference
+
+
+code:
+
+import numpy as np 
+
+def partial_deriv_lambda(data,lamval): 
+
+ #derivate of log of likelhood with respect to lambda is ∂LL/∂lambda =(n/lambda)-(x1+x2+...xn) for n=1 to N 
+ 
+ n=data.size
+ 
+ der_lambda=(n/lamval)-np.sum(data)
+ 
+ return der_lambda 
+  
+def log_likelihood(data,lambdaval): 
+
+ n=data.size
+ 
+ loglikeval= (n*np.log(lambdaval))-(lambdaval*np.sum(data)) # The LL function
+ 
+ #print("ll",loglikeval)
+ 
+ return loglikeval 
+
+def gradient_descent_exp(data, est_lambda,learning_rate, epochs): 
+
+ min_step_lambda=99999
+ 
+ threshold = 1e-3
+ 
+ prev_ll=0
+ 
+ est_ll = [] 
+ 
+ lam_set=[]
+ 
+ #print("lam",est_lambda)
+ 
+ for k in range(epochs): 
+ 
+  d_lambda = partial_deriv_lambda(data,est_lambda ) 
+  
+  #print("lambda=",est_lambda," dlambda=",d_lambda)
+  #print(d_lambda)
+  
+  estll_val=log_likelihood(data,est_lambda) 
+  
+  est_ll.append(-estll_val) 
+  
+  if min_step_lambda>(learning_rate*d_lambda): 
+  
+     opt_lambda=est_lambda - (learning_rate*d_lambda) 
+  
+ 
+  est_lambda = est_lambda - (-learning_rate*d_lambda) 
+  
+  lam_set.append(est_lambda)
+  
+  if(abs(prev_ll-estll_val) <threshold):
+  
+    print("entered optimal value")
+    
+    break
+    
+  prev_ll=estll_val
+ 
+ print("Final parameters with given iterations:") 
+ 
+ print(f"lambda value {est_lambda} Gradient of lambda is",partial_deriv_lambda(data,est_lambda) ) 
+ 
+ print(f"\n optimal lambda= {opt_lambda}" ) 
+ 
+ plt.figure(figsize=(8,8)) 
+ 
+ plt.title("Gradient descent of Lambda Exponential Distribution") 
+ 
+ plt.xlabel("lambda Estimate")
+ 
+ plt.ylabel("Negative log Likelyhood") 
+ 
+ plt.plot(lam_set, est_ll , label='expon pdf' , color = 'b')
+ 
+gradient_descent_exp(xdata,100,0.1,100) 
+
+
+output:
+
+
