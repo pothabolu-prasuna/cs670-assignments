@@ -82,6 +82,11 @@ plt.show()
 
 **output:**
 
+
+
+
+
+
 ![image](https://user-images.githubusercontent.com/106718885/174467073-3df17a51-c5c0-4251-accf-822bede0e671.png)
 
 
@@ -304,5 +309,17 @@ gradient_descent_exp(xdata,100,0.1,100)
 
 
 output:
+
+![image](https://user-images.githubusercontent.com/106718885/174519028-5d9bceac-3dce-46b3-a475-a7b9f6461b6b.png)
+
+
+**Part 3: (40 points)**
+**Suppose we have a training set of  independently distributed samples**
+
+{(x1,y1),(x2,y2),..(xm,ym)
+that is generated from a distribution pdata(x,y)
+
+Guassian model:pmodel(y|x;W)=(1/σ*sqart(2π))*
+1.Write the expression of the Negative Log Likelihood function . (10 points)
 
 
